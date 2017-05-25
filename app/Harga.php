@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gizi extends Model
+class Harga extends Model
 {
-  protected $table = 'gizi';
+  protected $table = 'harga';
 
   protected $fillable = [
-  'calory_amount',
+  'harga',
   'ingredient_id',
   'created_at',
   'updated_at',
   'deleted_at',
   ];
-
+  // asdsd
   public function ingredient() {
     return $this->belongsTo('App\Ingredient');
   }
