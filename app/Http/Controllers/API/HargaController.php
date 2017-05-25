@@ -18,7 +18,7 @@ class HargaController extends Controller
   }
 
   public function getOne($id) {
-    $responses = Harga::find($id);
+    $responses = Harga::where('id', '=', $id)->get();
     return response()->json($responses);
   }
 }
