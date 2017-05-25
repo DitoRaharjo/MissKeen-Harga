@@ -18,10 +18,10 @@ use Illuminate\Http\Request;
 // });
 
 Route::group(['prefix'=>env('API_VERSION')], function() {
-  Route::get('gizi', 'API\GiziController@getAll')->name('gizi.getAll');
-  Route::get('gizi/{id}', 'API\GiziController@getOne')->name('gizi.getOne');
+  Route::get('harga', 'API\HargaController@getAll')->name('harga.getAll');
+  Route::get('harga/{id}', 'API\HargaController@getOne')->name('harga.getOne');
 });
 
 Route::group(['prefix'=>env('API_VERSION')], function() {
-  Route::post('calory', 'API\IngredientController@getCalory')->name('ingredient.getCalory');
+  Route::post('totalharga', 'API\IngredientController@getHarga')->name('ingredient.getHarga');
 });

@@ -15,7 +15,7 @@ class Ingredient extends Model
   'deleted_at',
   ];
 
-  public function gizi() {
-    return $this->hasOne('App\Gizi');
+  public function harga() {
+    return $this->hasOne('App\Harga');
   }
 }

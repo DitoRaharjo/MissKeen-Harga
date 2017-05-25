@@ -12,18 +12,18 @@ use App\Ingredient;
 
 class IngredientController extends Controller
 {
-  public function getCalory(Request $request) {
+  public function getHarga(Request $request) {
     $input = $request->only('ingredients');
 
-    // $ingredients = $input['ingredients'];
-    //
-    // $totalCalory = 0;
-    //
-    // foreach ($ingredients as $ingredient) {
-    //   $calory = Harga::where('ingredient_id', '=', $ingredient)->pluck('calory_amount')->first();
-    //   $totalCalory = $totalCalory + $calory;
-    // }
+    $data = $input['ingredients'];
 
-    return response()->json($totalCalory);
+    $totalHarga = 0;
+
+    foreach ($data as $value) {
+      $harga = Harga::where('ingredient_id', '=', $value['id'])->pluck('harga')->first();
+      $totalHarga = $totalHarga + ($harga * $value['amount']);
+    }
+
+    return response()->json($totalHarga);
   }
 }
